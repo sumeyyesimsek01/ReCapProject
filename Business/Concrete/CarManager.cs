@@ -18,6 +18,9 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
+            // car.CarName.Length > 2 yapildiginda sistem senden min 3 karakter ister ama odev de min 2 karakter olmali deniliyor 
+            // car.CarName.Length >= 2 boyle olmali
+            
             if (car.CarName.Length > 2 && car.DailyPrice > 0) 
             {
                 Console.WriteLine("The car has been added to the system!");
