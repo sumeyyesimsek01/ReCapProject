@@ -9,7 +9,7 @@ namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
-        ICarDal _carDal;
+        private ICarDal _carDal;
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
@@ -18,10 +18,11 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            if (car.CarName.Length > 2 && car.DailyPrice > 0) 
+            if (car.CarName.Length >= 2 && car.DailyPrice > 0) 
             {
                 Console.WriteLine("The car has been added to the system!");
                 _carDal.Add(car);
+                
             }
             else
             {
